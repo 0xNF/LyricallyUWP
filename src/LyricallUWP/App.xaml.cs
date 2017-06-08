@@ -17,6 +17,7 @@ using Windows.UI.Xaml.Media;
 using Windows.UI.Xaml.Navigation;
 using Microsoft.Azure.Mobile;
 using Microsoft.Azure.Mobile.Analytics;
+using Microsoft.Azure.Mobile.Crashes;
 using Windows.ApplicationModel.Resources;
 
 namespace LyricallUWP
@@ -36,7 +37,7 @@ namespace LyricallUWP
             string hockeyAppID = rl.GetString("HockeyAppID");
             string mobileCenterID = rl.GetString("MobileCenterID");
             HockeyClient.Current.Configure(hockeyAppID);
-            MobileCenter.Start(mobileCenterID, typeof(Analytics));
+            MobileCenter.Start(mobileCenterID, new Type[] { typeof(Analytics), typeof(Crashes)});
 
             this.InitializeComponent();
             this.Suspending += OnSuspending;
