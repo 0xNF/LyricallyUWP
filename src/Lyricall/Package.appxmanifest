@@ -1,10 +1,10 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Package xmlns="http://schemas.microsoft.com/appx/manifest/foundation/windows10" xmlns:mp="http://schemas.microsoft.com/appx/2014/phone/manifest" xmlns:uap="http://schemas.microsoft.com/appx/manifest/uap/windows10" IgnorableNamespaces="uap mp">
-  <Identity Name="Lyricall" Publisher="CN=Djori" Version="0.0.1.0" />
-  <mp:PhoneIdentity PhoneProductId="ab793d19-4af4-484b-8fcf-707f3821b2e2" PhonePublisherId="00000000-0000-0000-0000-000000000000" />
+  <Identity Name="6906cf59-d9f6-4de4-90fb-cd8b07875b8e" Publisher="CN=daren" Version="1.0.0.0" />
+  <mp:PhoneIdentity PhoneProductId="6906cf59-d9f6-4de4-90fb-cd8b07875b8e" PhonePublisherId="00000000-0000-0000-0000-000000000000" />
   <Properties>
-    <DisplayName>Lyricall</DisplayName>
-    <PublisherDisplayName>Articulate Insights</PublisherDisplayName>
+    <DisplayName>Set DisplayName in AppxManifest/Packaging</DisplayName>
+    <PublisherDisplayName>Set PublisherName in AppxManifest/Packaging</PublisherDisplayName>
     <Logo>Assets\StoreLogo.png</Logo>
   </Properties>
   <Dependencies>
@@ -14,7 +14,7 @@
     <Resource Language="x-generate" />
   </Resources>
   <Applications>
-    <Application Id="App" Executable="$targetnametoken$.exe" EntryPoint="LyricallUWP.App">
+    <Application Id="App" Executable="$targetnametoken$.exe" EntryPoint="Sample.App">
       <uap:VisualElements DisplayName="Lyricall" Square150x150Logo="Assets\Square150x150Logo.png" Square44x44Logo="Assets\Square44x44Logo.png" Description="Smart playlists for Spotify" BackgroundColor="transparent">
         <uap:DefaultTile Wide310x150Logo="Assets\Wide310x150Logo.png">
         </uap:DefaultTile>
