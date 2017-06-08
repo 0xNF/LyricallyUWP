@@ -34,14 +34,15 @@ namespace LyricallUWP
         public App()
         {
             //If Release, enable analytics reporting
-            #if !DEBUG
-                ResourceLoader rl = ResourceLoader.GetForViewIndependentUse("Resources");
-                string hockeyAppID = rl.GetString("HockeyAppID");
-                string mobileCenterID = rl.GetString("MobileCenterID");
+             ResourceLoader rl = ResourceLoader.GetForViewIndependentUse("Resources");
+            string hockeyAppID = rl.GetString("HockeyAppID");
+            string mobileCenterID = rl.GetString("MobileCenterID");
+            if (!string.IsNullOrWhiteSpace(hockeyAppID)) {
                 HockeyClient.Current.Configure(hockeyAppID);
-                MobileCenter.Start(mobileCenterID, new Type[] { typeof(Analytics), typeof(Crashes)});
-            #endif
-
+            }
+            if (!string.IsNullOrWhiteSpace(mobileCenterID)) {
+                MobileCenter.Start(mobileCenterID, new Type[] { typeof(Analytics), typeof(Crashes) });
+            }
             this.InitializeComponent();
             this.Suspending += OnSuspending;
         }
