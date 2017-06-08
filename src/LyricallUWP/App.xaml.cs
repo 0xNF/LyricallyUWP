@@ -34,7 +34,7 @@ namespace LyricallUWP
         public App()
         {
             //If Release, enable analytics reporting
-             ResourceLoader rl = ResourceLoader.GetForViewIndependentUse("Resources");
+            ResourceLoader rl = ResourceLoader.GetForViewIndependentUse("Resources");
             string hockeyAppID = rl.GetString("HockeyAppID");
             string mobileCenterID = rl.GetString("MobileCenterID");
             if (!string.IsNullOrWhiteSpace(hockeyAppID)) {
