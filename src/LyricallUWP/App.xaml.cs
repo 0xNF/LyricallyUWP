@@ -33,11 +33,15 @@ namespace LyricallUWP
         /// </summary>
         public App()
         {
-            ResourceLoader rl = ResourceLoader.GetForViewIndependentUse("Resources");
-            string hockeyAppID = rl.GetString("HockeyAppID");
-            string mobileCenterID = rl.GetString("MobileCenterID");
-            HockeyClient.Current.Configure(hockeyAppID);
-            MobileCenter.Start(mobileCenterID, new Type[] { typeof(Analytics), typeof(Crashes)});
+            //If Release, enable analytics reporting
+            #if !DEBUG
+                Console.WriteLine("Mode=Debug");
+                ResourceLoader rl = ResourceLoader.GetForViewIndependentUse("Resources");
+                string hockeyAppID = rl.GetString("HockeyAppID");
+                string mobileCenterID = rl.GetString("MobileCenterID");
+                HockeyClient.Current.Configure(hockeyAppID);
+                MobileCenter.Start(mobileCenterID, new Type[] { typeof(Analytics), typeof(Crashes)});
+            #endif
 
             this.InitializeComponent();
             this.Suspending += OnSuspending;
